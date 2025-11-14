@@ -27,8 +27,8 @@ const WordPreloader = ({ onFinish }: { onFinish: () => void }) => {
     <div
       className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-700 ease-out ${
         isExiting
-          ? "bg-black opacity-0 scale-105"
-          : "bg-black opacity-100 scale-100"
+          ? "dark:bg-black opacity-0 scale-105"
+          : "dark:bg-black opacity-100 scale-100"
       }`}
     >
      
@@ -42,7 +42,7 @@ const WordPreloader = ({ onFinish }: { onFinish: () => void }) => {
                 : "opacity-0 translate-y-6 scale-95 blur-sm"
             }`}
           >
-            <h1 className="text-white text-6xl sm:text-7xl font-space-grotesk-700 tracking-tight">
+            <h1 className="dark:text-white text-6xl sm:text-7xl font-space-grotesk-700 tracking-tight">
               {word}
             </h1>
           </div>

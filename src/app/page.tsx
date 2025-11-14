@@ -15,7 +15,7 @@ import Taskbar from "@/components/Taskbar";
 import Graph from "@/components/Graph";
 
 const page = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   return (
     <>
       {loading ? (
