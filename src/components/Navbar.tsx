@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import CommandMenu from "./CommandMenu";
 import { GitHubIcon } from "@/app/icons/Githubicon";
 import { useRouter } from "next/navigation";
+import { ThemeButton } from "@/components/ThemeButton";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -41,20 +42,22 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <div className="border-b-2 border-[#1C1C1F] bg-black">
+      <div className="border-b-2 border-[#1C1C1F] bg-white dark:bg-black">
         <div className="flex items-center justify-between px-4 py-2 sm:px-6">
-          <p className="font-space-grotesk-700 font-sans text-lg font-semibold text-white sm:text-xl">
+          <p className="font-space-grotesk-700 font-sans text-lg font-semibold text-black 
+          dark:text-white
+          sm:text-xl">
             @code by HASSAN
           </p>
 
           <div className="flex items-center gap-3 sm:gap-6 lg:gap-8">
             <div className="hidden items-center gap-6 md:flex lg:gap-8">
-              <button
+              {/* <button
                 className="font-space-grotesk-300 font-sans font-medium text-white transition-colors hover:text-gray-300"
                 onClick={() => router.push("/projects")}
               >
                 Projects
-              </button>
+              </button> */}
               {/* <button
                 className="font-space-grotesk-300 font-sans font-medium text-white transition-colors hover:text-gray-300"
                 onClick={() => router.push("/art")}
@@ -65,21 +68,22 @@ const Navbar: React.FC = () => {
 
             <button
               onClick={toggleCommandMenu}
-              className="hidden items-center gap-3 rounded-lg border-2 border-[#252528] bg-black px-2 py-1.5 text-gray-400 transition-all duration-200 hover:border-gray-500 hover:text-gray-300 md:flex"
+              className="hidden items-center gap-3 rounded-lg border-2 border-[#252528] dark:bg-black px-2 py-1.5 text-gray-400 transition-all duration-200 hover:border-gray-500 hover:text-gray-300 md:flex"
             >
               <span className="font-space-grotesk-400 text-sm font-medium">
                 Search...
               </span>
               <div className="flex items-center gap-1">
-                <kbd className="rounded border border-[#404044] bg-[#252528] px-2 py-1 font-mono text-xs text-gray-300">
+                <kbd className="rounded border border-[#404044] dark:bg-[#252528] px-2 py-1 font-mono text-xs dark:text-gray-300">
                   CTRL
                 </kbd>
-                <kbd className="rounded border border-[#404044] bg-[#252528] px-2 py-1 font-mono text-xs text-gray-300">
+                <kbd className="rounded border border-[#404044] dark:bg-[#252528] px-2 py-1 font-mono text-xs dark:text-gray-300 ">
                   K
                 </kbd>
               </div>
             </button>
 
+            
             {/* <div className="md:hidden sm:hidden scale-75 origin-right">
               <Searchbox />
             </div> */}
@@ -89,8 +93,11 @@ const Navbar: React.FC = () => {
               rel="noopener noreferrer"
               className="-ml-4 flex h-7 w-7 items-center justify-center rounded-lg ring-2 ring-[#252528] transition-all duration-200 hover:bg-[#1C1C1F] hover:ring-gray-400 sm:h-8 sm:w-8 md:h-9 md:w-9"
             >
-              <GitHubIcon className="h-4 w-4 text-white sm:h-2 sm:w-2 md:h-4 md:w-5" />
+              <GitHubIcon className="h-4 w-4 bg-black rounded-4xl sm:h-2 sm:w-2 md:h-4 md:w-5" />
             </a>
+
+            <ThemeButton></ThemeButton>
+
 
             <button
               onClick={toggleMenu}

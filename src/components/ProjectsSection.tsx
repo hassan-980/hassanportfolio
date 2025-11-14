@@ -5,7 +5,7 @@ import ProjectsCard from "./ProjectsCard";
 const ProjectsSection = () => {
   return (
     <>
-      <div className="flex items-center justify-between border-b-2 border-[#1C1C1F] bg-black ">
+      <div className="flex items-center justify-between border-b-2 border-[#1C1C1F] dark:bg-black ">
     
       </div>
 

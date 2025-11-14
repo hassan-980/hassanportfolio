@@ -15,15 +15,15 @@ import Taskbar from "@/components/Taskbar";
 import Graph from "@/components/Graph";
 
 const page = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   return (
     <>
       {loading ? (
         <LoadingScreen onFinish={() => setLoading(false)} />
       ) : (
-        <div className="w-full bg-[repeating-linear-gradient(45deg,#000_0px,#000_7px,#1C1C1F_7px,#1C1C1F_8px)]">
+        <div className="w-full dark:bg-[repeating-linear-gradient(45deg,#000_0px,#000_7px,#1C1C1F_7px,#1C1C1F_8px)]  bg-[repeating-linear-gradient(45deg,#ffffff_0px,#ffffff_7px,#1C1C1F_7px,#1C1C1F_8px)]">
           <Container>
-            <div className="text-white">
+            <div className="dark:text-white text-black dark:bg-black bg-white">
               <Navbar />
               <HeroSection />
               <Separator />

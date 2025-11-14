@@ -4,12 +4,13 @@ import "./globals.css";
 import { Space_Grotesk } from "next/font/google";
 import CustomCursor from "@/components/CustomCursor";
 import { Analytics } from "@vercel/analytics/next";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const blackHanSans = Black_Han_Sans({
   variable: "--font-black-han-sans",
   subsets: ["latin"],
-  weight: '400',
-})
+  weight: "400",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,12 +40,16 @@ export const metadata: Metadata = {
     "React Developer",
     "Tailwind CSS",
     "Swami Malode",
-  ]
+  ],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/logo.ico" />
         {/* <script
@@ -67,10 +72,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         /> */}
       </head>
       <body
-        className={` ${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable}
-        ${blackHanSans.variable}
-        antialiased`}>
-        {children}
+        className={` ${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} ${blackHanSans.variable} antialiased`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+
         <Analytics />
         <CustomCursor />
       </body>

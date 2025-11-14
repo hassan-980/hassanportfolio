@@ -3,16 +3,16 @@ import { ArrowUpRight } from "lucide-react";
 
 const About = () => {
   return (
-    <section className="bg-black text-gray-300 font-space-grotesk">
+    <section className="dark:bg-black text-black  font-space-grotesk">
       <div className="px-4 sm:px-[5%] mt-0 py-6">
-        <p className="mb-4 sm:mb-6 leading-relaxed text-base sm:text-lg md:text-xl text-[#A6A6A6]">
+        <p className="mb-4 sm:mb-6 leading-relaxed text-base sm:text-lg md:text-xl dark:text-[#A6A6A6]">
           I’m a Full Stack Developer based in India, currently
           pursuing my degree at JSS Academy of Technical Education. I blend
           design thinking with technical expertise to create intuitive and scalable
           digital solutions.
         </p>
 
-        <p className="mb-6 sm:mb-10 leading-relaxed text-base sm:text-lg md:text-xl text-[#A6A6A6]">
+        <p className="mb-6 sm:mb-10 leading-relaxed text-base sm:text-lg md:text-xl dark:text-[#A6A6A6]">
           With a strong foundation in both design and development, I bridge the gap
           between aesthetics and functionality. My approach combines user-centered
           design principles with robust full-stack development practices, ensuring
